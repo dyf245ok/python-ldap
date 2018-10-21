@@ -1,33 +1,33 @@
+﻿### With the help of existing openLDAP：jermine/openldap ###
 
-
-### With the help of existing openLDAP：jermine/openldap ###
-
-run:
-- docker run -it --rm --name openldap `\` 
--          -p 389:389 `\`
--          -e DEBUG_LEVEL=1 `\` 
--          -e DOMAIN=my-company.com `\`
--          -e ORGANIZATION="My Company" `\`
--          -e PASSWORD=1234567890 `\`
--          jermine/openldap
+run:<br>
+docker run -it --rm --name openldap \ <br>
+          -p 389:389 \ <br>
+          -e DEBUG_LEVEL=1 \<br>
+          -e DOMAIN=my-company.com \<br>
+          -e ORGANIZATION="My Company" \ <br>
+          -e PASSWORD=1234567890 \<br>
+         jermine/openldap <br>
 ### Installing python images ###
 
-** Build a complete python environment in ubuntu：**
-- docker pull ubuntu
-- docker run -i -t ubuntu /bin/bash 
-- apt-get update 
-- apt-get install python3
-- 输入python3试一下
-- apt-get install python3-pip(这个命令好像会同时安装python2.7)
-- 输入pip试一下
-- apt-get install python3-dev
-- apt-get install openssl
-- apt-get install libssl-dev
-- apt-get install libffi-dev
-** 打包装了python的容器: ** 
-- docker commit  <容器id>  docker/python3env 
-** 进入容器互动： ** 
-- docker run -it python:3.7 打开容器
+** Build a complete python environment in ubuntu：**<br>
+ docker pull ubuntu<br>
+ docker run -i -t ubuntu /bin/bash <br>
+ apt-get update <br>
+ apt-get install python3<br>
+ 输入python3试一下<br>
+ apt-get install python3-pip(这个命令好像会同时安装python2.7)<br>
+ 输入pip试一下<br>
+ apt-get install python3-dev<br>
+ apt-get install openssl<br>
+ apt-get install libssl-dev<br>
+ apt-get install libffi-dev<br>
+ 
+** 打包装了python的容器: ** <br>
+ docker commit  <容器id>  docker/python3env <br>
+ 
+** 进入容器互动： ** <br>
+ docker run -it python:3.7 打开容器<br>
 
-** 完成认证 **
-- docker run -v /c/Users/qtt/py:/py -w /py docker/python3env python3 hello.py 
+** 完成认证 **<br>
+ docker run -v /c/Users/qtt/py:/py -w /py docker/python3env python3 hello.py 
